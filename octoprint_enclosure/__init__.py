@@ -1357,7 +1357,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
     def read_max31855_temp(self, address):
         try:
             script = os.path.dirname(os.path.realpath(__file__)) + "/max31855.py"
-            args = ["python", script, str(address)]
+            args = ["python3", script, str(address)]
             if  self._settings.get(["debug_temperature_log"]) is True:
                 self._logger.debug("Temperature MAX31855 cmd: %s", " ".join(args))
             proc = Popen(args, stdout=PIPE)
